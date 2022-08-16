@@ -9,7 +9,8 @@
 </template>
 <style>
 .main {
-  padding: 70%;
-  background-color: aquamarine;
+  padding: 50%;
+  margin: auto;
+  background-color: gray;
 }
 </style>

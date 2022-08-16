@@ -13,12 +13,20 @@
   overflow: hidden;
   background-color: #333;
 }
+.topnav ul {
+  text-align: center;
+}
 .topnav li {
+  display: inline-block;
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
+  /* text-align: center; */
   padding: 14px 16px;
+  text-decoration: none;
+}
+.topnav a {
+  color: white;
   text-decoration: none;
 }
 </style>
