@@ -12,8 +12,8 @@ export default {};
 </script>
 <style>
 header {
-  width: 100%;
+  background-color: #f1f1f1;
   text-align: center;
-  position: relative;
+  padding: 10px;
 }
 </style>

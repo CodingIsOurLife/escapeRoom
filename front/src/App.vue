@@ -1,7 +1,7 @@
 <template>
   <div>
     <Myheader></Myheader>
-
+    <Mynav></Mynav>
     <router-view />
     <Myfooter></Myfooter>
   </div>
@@ -10,6 +10,7 @@
 <script>
 import Myheader from "./components/Myheader.vue";
 import Myfooter from "./components/Myfooter.vue";
+import Mynav from "./components/Mynav.vue";
 //import HomeView from "./views/HomeView.vue";
 
 export default {
@@ -17,6 +18,7 @@ export default {
     Myheader,
     Myfooter,
     //HomeView,
+    Mynav,
   },
 };
 </script>
