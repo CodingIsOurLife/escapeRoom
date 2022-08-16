@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import board from "../views/board";
 import escape from "../views/escape";
+import Login from "../views/Login";
+import SignUp from "../views/SignUp";
 
 Vue.use(VueRouter);
 
@@ -31,6 +33,16 @@ const routes = [
     path: "/escape",
     name: "escape",
     component: escape,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
+  },
+  {
+    path: "/SignUp",
+    name: "SignUp",
+    component: SignUp,
   },
 ];
 
