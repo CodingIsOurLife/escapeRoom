@@ -2,7 +2,7 @@
   <div class="navs">
     <ul class="nav">
       <li><router-link to="/login">로그인</router-link></li>
-      <li><router-link to="/SignUp">회원가입</router-link></li>
+      <li><router-link to="/signUp">회원가입</router-link></li>
     </ul>
   </div>
 </template>
@@ -24,7 +24,7 @@
   text-decoration: none;
 }
 .navs a {
-  color: black;
+  color: gray;
   text-decoration: none;
 }
 </style>
