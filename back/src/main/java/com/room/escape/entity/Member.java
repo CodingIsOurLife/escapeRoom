@@ -17,6 +17,7 @@ public class Member {
 
     private String nickname;
 
+    // 이메일 아이디 사용
     private String email;
 
     private Integer point;

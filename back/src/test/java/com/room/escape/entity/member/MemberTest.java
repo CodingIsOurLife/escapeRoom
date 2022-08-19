@@ -1,4 +1,4 @@
-package com.room.escape.entity.user;
+package com.room.escape.entity.member;
 
 import com.room.escape.entity.Member;
 import com.room.escape.repository.MemberRepository;
