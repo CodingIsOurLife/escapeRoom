@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class TestController {
-    @RequestMapping("/")
+    @RequestMapping("/api")
     public String con(){
         log.info("success~~~~");
         return "success!!!";

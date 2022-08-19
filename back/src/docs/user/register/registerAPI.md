@@ -1,6 +1,6 @@
 ### Request
 ```
-POST /member/register HTTP/1.1
+POST /api/member/register HTTP/1.1
 Host: 192.168.56.1:8080
 Content-Type: application/json
 

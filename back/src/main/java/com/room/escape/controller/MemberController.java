@@ -20,7 +20,7 @@ import java.net.URI;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/member")
+@RequestMapping("/api/member")
 public class MemberController {
     private final MemberService memberService;
 
