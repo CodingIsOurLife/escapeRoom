@@ -1,5 +1,5 @@
 <template>
-  <div class="register">
+  <div class="register-container">
     <h3>로그인</h3>
     <form v-on:submit.prevent="loginSubmit">
       <div class="flex">
@@ -78,6 +78,7 @@ export default {
   },
 };
 </script>
+
 <style>
 * {
   margin: 0;
@@ -92,9 +93,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.register {
+.register-container {
   width: 550px;
-  margin: 200px auto 0;
+  margin: 10em auto;
   padding: 15px 20px;
   background: white;
   color: #2b2e4a;
@@ -102,12 +103,12 @@ a {
   text-align: left;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-.register h3 {
+.register-container h3 {
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
-.register input {
+.register-container input {
   width: 100%;
   height: 40px;
   outline: none;
@@ -115,27 +116,27 @@ a {
   border: 1px solid #707070;
   transition: 0.3s;
 }
-.register input:valid,
-.register input:focus {
+.register-container input:valid,
+.register-container input:focus {
   border: 1px solid #2b2e4a;
 }
-.register .center {
+.register-container .center {
   display: flex;
   align-items: center;
 }
-.register .flex {
+.register-container .flex {
   display: flex;
   flex-direction: column;
 }
-.register .flex .container {
+.register-container .flex .container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   margin-bottom: 10px;
 }
-.register .flex .container .item:first-child {
+.register-container .flex .container .item:first-child {
   margin-right: 10px;
 }
-.register .flex .container .item .idcheck {
+.register-container .flex .container .item .idcheck {
   height: 100%;
   margin-left: 10px;
   padding: 5px 15px;
@@ -145,16 +146,16 @@ a {
   font-size: 12px;
   transition: 0.3s;
 }
-.register .flex .container .item .idcheck:hover {
+.register-container .flex .container .item .idcheck:hover {
   background: white;
   color: #2b2e4a;
 }
-.register .flex .container .item select {
+.register-container .flex .container .item select {
   height: 40px;
   padding: 10px;
   border: 1px solid #2b2e4a;
 }
-.register .submit {
+.register-container .submit {
   width: 100%;
   height: 40px;
   color: white;
@@ -163,10 +164,10 @@ a {
   background: #2b2e4a;
   transition: 0.3s;
 }
-.register .flex .container:last-child {
+.register-container .flex .container:last-child {
   margin: 0;
 }
-.register .submit:hover {
+.register-container .submit:hover {
   width: 100%;
   height: 40px;
   border: none;
