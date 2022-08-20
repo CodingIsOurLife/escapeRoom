@@ -2,17 +2,35 @@
   <div class="topnavs">
     <hr />
     <ul class="topnav">
-      <li><router-link to="/escape">방탈출</router-link></li>
-      <li><router-link to="#">랭킹</router-link></li>
-      <li><router-link to="/board">게시판</router-link></li>
-      <li><router-link to="#">마이페이지</router-link></li>
+      <li>
+        <router-link to="/escape">
+          <h3>방탈출</h3>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="#">
+          <h3>랭킹</h3>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/board">
+          <h3>게시판</h3>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="#">
+          <h3>마이페이지</h3>
+        </router-link>
+      </li>
     </ul>
     <hr />
   </div>
 </template>
+
 <style>
 .topnav {
   overflow: hidden;
+  margin-left: 2em;
 }
 
 .topnav ul {
