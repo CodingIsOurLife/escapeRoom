@@ -23,12 +23,12 @@ const routes = [
   {
     path: "/board",
     name: "board",
-    component: () => import("../views/board"),
+    component: () => import("../views/Board"),
   },
   {
     path: "/escape",
     name: "escape",
-    component: () => import("../views/escape"),
+    component: () => import("../views/Escape"),
   },
   {
     path: "/login",
