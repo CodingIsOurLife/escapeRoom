@@ -1,10 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import board from "../views/board";
-import escape from "../views/escape";
-import Login from "../views/Login";
-import SignUp from "../views/SignUp";
 
 Vue.use(VueRouter);
 
@@ -27,22 +23,22 @@ const routes = [
   {
     path: "/board",
     name: "board",
-    component: board,
+    component: () => import("../views/Board"),
   },
   {
     path: "/escape",
     name: "escape",
-    component: escape,
+    component: () => import("../views/Escape"),
   },
   {
     path: "/login",
     name: "login",
-    component: Login,
+    component: () => import("../views/auth/Login"),
   },
   {
     path: "/signUp",
     name: "signUp",
-    component: SignUp,
+    component: () => import("../views/auth/SignUp"),
   },
 ];
 
