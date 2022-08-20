@@ -31,7 +31,7 @@ export default {
 
 <style>
 .app {
-  margin-left: 200px;
-  margin-right: 200px;
+  /* margin-left: 3em;
+  margin-right: 3em; */
 }
 </style>
