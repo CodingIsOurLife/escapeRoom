@@ -32,6 +32,7 @@
   /* text-align: center; */
   padding: 10px 10px;
   text-decoration: none;
+  margin-left: 2em;
 }
 .navs a {
   color: gray;
