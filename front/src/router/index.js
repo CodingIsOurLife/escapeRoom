@@ -33,12 +33,12 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () => import("../views/Login"),
+    component: () => import("../views/auth/Login"),
   },
   {
     path: "/signUp",
     name: "signUp",
-    component: () => import("../views/SignUp"),
+    component: () => import("../views/auth/SignUp"),
   },
 ];
 
