@@ -1,6 +1,18 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  transpileDependencies: [
-    'vuetify'
-  ]
-})
+  transpileDependencies: ["vuetify"],
+});
+module.exports = {
+  // 개발 서버 설정
+  devServer: {
+    // 프록시 설정
+    proxy: {
+      // 프록시 요청을 보낼 api의 시작 부분
+      "/api": {
+        // 프록시 요청을 보낼 서버의 주소
+        target: "http://175.119.85.218:8282",
+        changeOrigin: true,
+      },
+    },
+  },
+};
