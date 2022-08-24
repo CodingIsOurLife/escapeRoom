@@ -1,6 +1,6 @@
 <template>
-  <v-footer dark padless>
-    <v-card flat tile class="indigo lighten-1 white--text text-center">
+  <v-footer dark padless class="back">
+    <v-card flat tile class="lighten-1 white--text text-center">
       <v-card-text>
         <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
           <v-icon size="24px">
@@ -38,5 +38,10 @@ export default {
 </script>
 
 <style>
-/*  */
+.back {
+  background-color: #345f53;
+  color: white;
+  text-align: center;
+  height: 50px;
+}
 </style>
