@@ -1,36 +1,18 @@
 <template>
   <div class="topnavs">
-    <hr />
     <ul class="topnav">
-      <li>
-        <router-link to="/escape">
-          <h3>방탈출</h3>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="#">
-          <h3>랭킹</h3>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/board">
-          <h3>게시판</h3>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="#">
-          <h3>마이페이지</h3>
-        </router-link>
-      </li>
+      <li><router-link to="/escape">Escape</router-link></li>
+      <li><router-link to="#">Ranking</router-link></li>
+      <li><router-link to="/board">board</router-link></li>
+      <li><router-link to="#">Mypage</router-link></li>
     </ul>
-    <hr />
   </div>
 </template>
-
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
 .topnav {
   overflow: hidden;
-  margin-left: 2em;
+  background-color: #345f53;
 }
 
 .topnav ul {
@@ -38,7 +20,7 @@
 }
 .topnav li {
   display: inline-block;
-  float: left;
+  float: right;
   display: block;
   color: #f2f2f2;
   /* text-align: center; */
@@ -46,8 +28,8 @@
   text-decoration: none;
 }
 .topnavs a {
-  color: black;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-family: "Rajdhani", sans-serif;
 }
 </style>
