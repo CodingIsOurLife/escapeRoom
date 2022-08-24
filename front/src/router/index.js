@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/escape",
     name: "escape",
-    component: () => import("../views/Escape"),
+    component: () => import("../views/EscapeDetail"),
   },
   {
     path: "/login",
