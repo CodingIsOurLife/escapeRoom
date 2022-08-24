@@ -1,15 +1,15 @@
 <template>
-  <v-footer dark padless class="back">
-    <v-card flat tile class="lighten-1 white--text text-center">
-      <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+  <v-footer padless class="back">
+    <v-card flat tile class="back">
+      <v-card-text class="back">
+        <v-btn v-for="icon in icons" :key="icon" class="" icon>
           <v-icon size="24px">
             {{ icon }}
           </v-icon>
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
+      <v-card-text class="back">
         Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
         Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
         accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
@@ -22,7 +22,7 @@
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text class="back">
         {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
       </v-card-text>
     </v-card>
@@ -40,8 +40,7 @@ export default {
 <style>
 .back {
   background-color: #345f53;
-  color: white;
+  color: #fff;
   text-align: center;
-  height: 50px;
 }
 </style>
