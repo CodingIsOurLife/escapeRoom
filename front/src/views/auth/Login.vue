@@ -1,5 +1,5 @@
 <template>
-  <div class="register-container">
+  <div class="register">
     <h3>로그인</h3>
     <form v-on:submit.prevent="loginSubmit">
       <div class="flex">
@@ -46,6 +46,7 @@ export default {
     return {
       uemail: "",
       pw: "",
+      token: "",
     };
   },
   methods: {
@@ -53,10 +54,10 @@ export default {
       //event.preventDefault();
 
       //console.log(this.uemail, this.pw, this.nickname);
-      let url = "https://";
+      let url = "member/login";
       let saveData = {
-        saveEmail: this.uemail,
-        savePw: this.pw,
+        email: this.uemail,
+        pw: this.pw,
       };
       try {
         axios
@@ -67,6 +68,11 @@ export default {
           })
           .then((res) => {
             if (res.status === 200) {
+              this.result = res.data;
+              console.log(this.result);
+              this.token = this.result.token;
+              this.$cookie.set("accesstoken", res.data.token, 1);
+              axios.defaults.headers.common["access token"] = res.data.token;
               alert("어서오세요");
               this.$router.push("/");
             }
@@ -78,7 +84,6 @@ export default {
   },
 };
 </script>
-
 <style>
 * {
   margin: 0;
@@ -93,9 +98,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.register-container {
+.register {
   width: 550px;
-  margin: 10em auto;
+  margin: 200px auto 0;
   padding: 15px 20px;
   background: white;
   color: #2b2e4a;
@@ -103,12 +108,12 @@ a {
   text-align: left;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-.register-container h3 {
+.register h3 {
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
-.register-container input {
+.register input {
   width: 100%;
   height: 40px;
   outline: none;
@@ -116,27 +121,27 @@ a {
   border: 1px solid #707070;
   transition: 0.3s;
 }
-.register-container input:valid,
-.register-container input:focus {
+.register input:valid,
+.register input:focus {
   border: 1px solid #2b2e4a;
 }
-.register-container .center {
+.register .center {
   display: flex;
   align-items: center;
 }
-.register-container .flex {
+.register .flex {
   display: flex;
   flex-direction: column;
 }
-.register-container .flex .container {
+.register .flex .container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   margin-bottom: 10px;
 }
-.register-container .flex .container .item:first-child {
+.register .flex .container .item:first-child {
   margin-right: 10px;
 }
-.register-container .flex .container .item .idcheck {
+.register .flex .container .item .idcheck {
   height: 100%;
   margin-left: 10px;
   padding: 5px 15px;
@@ -146,16 +151,16 @@ a {
   font-size: 12px;
   transition: 0.3s;
 }
-.register-container .flex .container .item .idcheck:hover {
+.register .flex .container .item .idcheck:hover {
   background: white;
   color: #2b2e4a;
 }
-.register-container .flex .container .item select {
+.register .flex .container .item select {
   height: 40px;
   padding: 10px;
   border: 1px solid #2b2e4a;
 }
-.register-container .submit {
+.register .submit {
   width: 100%;
   height: 40px;
   color: white;
@@ -164,10 +169,10 @@ a {
   background: #2b2e4a;
   transition: 0.3s;
 }
-.register-container .flex .container:last-child {
+.register .flex .container:last-child {
   margin: 0;
 }
-.register-container .submit:hover {
+.register .submit:hover {
   width: 100%;
   height: 40px;
   border: none;
