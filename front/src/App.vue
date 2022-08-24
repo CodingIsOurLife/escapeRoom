@@ -13,8 +13,8 @@
 import Myheader from "./components/Myheader.vue";
 import Myfooter from "./components/Myfooter.vue";
 import Mynav from "./components/Mynav.vue";
-import loginNav from "./components/loginNav.vue";
-import LoginNav from "./components/loginNav.vue";
+
+import LoginNav from "./components/LoginNav.vue";
 //import HomeView from "./views/HomeView.vue";
 
 export default {
@@ -23,7 +23,7 @@ export default {
     Myfooter,
     //HomeView,
     Mynav,
-    loginNav,
+
     LoginNav,
   },
 };
