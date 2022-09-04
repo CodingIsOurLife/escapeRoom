@@ -1,86 +1,90 @@
 <template>
   <div class="register">
     <h3>로그인</h3>
-    <form v-on:submit.prevent="loginSubmit">
-      <div class="flex">
-        <ul class="container">
-          <li class="item center">이메일</li>
-          <li class="item">
-            <input
-              type="text"
-              v-model="uemail"
-              placeholder="이메일을 입력하세요."
-              required
-            />
-          </li>
-        </ul>
-        <ul class="container">
-          <li class="item center">비밀번호</li>
-          <li class="item">
-            <input
-              type="password"
-              v-model="pw"
-              placeholder="비밀번호를 입력하세요."
-              required
-            />
-          </li>
-          <li class="item"></li>
-        </ul>
+    <!-- <form v-on:submit.prevent="loginSubmit"> -->
+    <div class="flex">
+      <ul class="container">
+        <li class="item center">이메일</li>
+        <li class="item">
+          <input
+            type="text"
+            v-model="email"
+            placeholder="이메일을 입력하세요."
+            required
+          />
+        </li>
+      </ul>
+      <ul class="container">
+        <li class="item center">비밀번호</li>
+        <li class="item">
+          <input
+            type="password"
+            v-model="password"
+            placeholder="비밀번호를 입력하세요."
+            required
+          />
+        </li>
+        <li class="item"></li>
+      </ul>
 
-        <ul class="container">
-          <li class="item center"></li>
-          <li class="item">
-            <button class="submit">로그인하기</button>
-          </li>
-          <li class="item"></li>
-        </ul>
-      </div>
-    </form>
+      <ul class="container">
+        <li class="item center"></li>
+        <li class="item">
+          <button @click="login({ email: email, password: password })">
+            로그인하기
+          </button>
+        </li>
+        <li class="item"></li>
+      </ul>
+    </div>
+    <!-- </form> -->
   </div>
 </template>
 
 <script>
-import axios from "axios";
+//import axios from "axios";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      uemail: "",
-      pw: "",
-      token: "",
+      email: "",
+      password: "",
+      // token: "",
     };
   },
   methods: {
-    loginSubmit: function () {
-      //event.preventDefault();
+    ...mapActions(["login"]),
 
-      //console.log(this.uemail, this.pw, this.nickname);
-      let url = "member/login";
-      let saveData = {
-        email: this.uemail,
-        pw: this.pw,
-      };
-      try {
-        axios
-          .post(url, JSON.stringify(saveData), {
-            headers: {
-              "Content-Type": `application/json`,
-            },
-          })
-          .then((res) => {
-            if (res.status === 200) {
-              this.result = res.data;
-              console.log(this.result);
-              this.token = this.result.token;
-              this.$cookie.set("accesstoken", res.data.token, 1);
-              axios.defaults.headers.common["access token"] = res.data.token;
-              alert("어서오세요");
-              this.$router.push("/");
-            }
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    },
+    // loginSubmit: function () {
+    //   //event.preventDefault();
+
+    //   //console.log(this.uemail, this.pw, this.nickname);
+    //   let url = "member/login";
+    //   let saveData = {
+    //     email: this.uemail,
+    //     pw: this.pw,
+    //   };
+    //   try {
+    //     axios
+    //       .post(url, JSON.stringify(saveData), {
+    //         headers: {
+    //           "Content-Type": `application/json`,
+    //         },
+    //       })
+    //       .then((res) => {
+    //         if (res.status === 200) {
+    //           this.result = res.data;
+    //           console.log(this.result);
+    //           this.token = this.result.token;
+    //           this.$cookie.set("accesstoken", res.data.token, 1);
+    //           axios.defaults.headers.common["access token"] = res.data.token;
+    //           alert("어서오세요");
+    //           this.$router.push("/");
+    //         }
+    //       });
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
   },
 };
 </script>
