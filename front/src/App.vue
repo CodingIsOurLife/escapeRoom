@@ -1,9 +1,10 @@
 <template>
   <div class="app">
-    <LoginNav></LoginNav>
-    <Myheader></Myheader>
-
     <Mynav></Mynav>
+    <LoginNav></LoginNav>
+
+    <Myheader></Myheader>
+    <p class="design"><br />Escape</p>
     <router-view />
     <Myfooter></Myfooter>
   </div>
@@ -13,8 +14,8 @@
 import Myheader from "./components/Myheader.vue";
 import Myfooter from "./components/Myfooter.vue";
 import Mynav from "./components/Mynav.vue";
-import loginNav from "./components/loginNav.vue";
-import LoginNav from "./components/loginNav.vue";
+
+import LoginNav from "./components/LoginNav.vue";
 //import HomeView from "./views/HomeView.vue";
 
 export default {
@@ -23,15 +24,26 @@ export default {
     Myfooter,
     //HomeView,
     Mynav,
-    loginNav,
+
     LoginNav,
   },
 };
 </script>
 
 <style>
+@font-face {
+  font-family: "Rajdhani", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+}
 .app {
-  margin-left: 200px;
-  margin-right: 200px;
+  font-family: "Rajdhani", sans-serif;
+}
+.design {
+  height: 100px;
+  background-color: #345f53;
+  color: white;
+  font-size: x-large;
+  text-align: center;
+  /* font-family: "Rajdhani", sans-serif; */
 }
 </style>

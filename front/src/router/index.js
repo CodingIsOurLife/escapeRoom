@@ -1,11 +1,27 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import board from "../views/board";
-import escape from "../views/escape";
-
+import store from "../store/index";
 Vue.use(VueRouter);
 
+const authUser = (to, from, next) => {
+  if (store.state.isLogin === true) {
+    //이미 로그인된 유저
+    alert("이미 로그인이 되었슴니다");
+    next("/");
+  } else {
+    next();
+  }
+};
+const onlyAuthUser = (to, from, next) => {
+  if (store.state.isLogin === false) {
+    //아직 로그인 안 된 유저
+    alert("로그인이 필요합니다");
+    next("/");
+  } else {
+    next();
+  }
+};
 const routes = [
   {
     path: "/",
@@ -25,12 +41,29 @@ const routes = [
   {
     path: "/board",
     name: "board",
-    component: board,
+    component: () => import("../views/Board"),
   },
   {
     path: "/escape",
     name: "escape",
-    component: escape,
+    component: () => import("../views/EscapeDetail"),
+  },
+  {
+    path: "/login",
+    name: "login",
+    beforeEnter: authUser,
+    component: () => import("../views/auth/Login"),
+  },
+  {
+    path: "/signUp",
+    name: "signUp",
+    component: () => import("../views/auth/SignUp"),
+  },
+  {
+    path: "/myPage",
+    name: "myPage",
+    beforeEnter: onlyAuthUser,
+    component: () => import("../views/auth/MyPage"),
   },
 ];
 
