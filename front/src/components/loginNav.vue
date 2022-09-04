@@ -1,9 +1,8 @@
 <template>
   <div class="navs">
     <ul class="nav">
-      <div v-if="isCookie">
-        <li>home</li>
-        <li v-on:click.prevent="deleteCookie" href="/">로그아웃</li>
+      <div v-if="isLogin === true">
+        <li @click="$store.dispatch('logout')">로그아웃</li>
       </div>
       <div v-else>
         <li><router-link to="/login">Sign In</router-link></li>
@@ -13,21 +12,14 @@
   </div>
 </template>
 <script>
+import { mapActions, mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      isCookie: null,
-    };
-  },
-  created() {
-    this.isCookie = document.cookie;
+  computed: {
+    ...mapState(["isLogin"]),
   },
   methods: {
-    deleteCookie() {
-      this.$cookie.delete("accesstoken");
-      this.isCookie = document.cookie;
-      alert("로그아웃되었습니다.");
-    },
+    ...mapActions(["logout"]),
   },
 };
 </script>
@@ -43,7 +35,7 @@ export default {
   display: inline-block;
   float: right;
   display: block;
-  color: #f2f2f2;
+
   /* text-align: center; */
   padding: 10px 10px;
   text-decoration: none;
