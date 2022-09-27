@@ -37,6 +37,7 @@ export default {
 }
 .app {
   font-family: "Rajdhani", sans-serif;
+  color: black;
 }
 .design {
   height: 100px;
