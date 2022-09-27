@@ -41,7 +41,12 @@ const routes = [
   {
     path: "/board",
     name: "board",
-    component: () => import("../views/Board"),
+    component: () => import("../views/post/PostList"),
+  },
+  {
+    path: "/postDetail",
+    name: "postDetail",
+    component: () => import("../views/post/PostDetail"),
   },
   {
     path: "/escape",
