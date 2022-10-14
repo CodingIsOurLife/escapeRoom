@@ -5,8 +5,8 @@
         <li @click="$store.dispatch('logout')">로그아웃</li>
       </div>
       <div v-else>
-        <li><router-link to="/login">Sign In</router-link></li>
-        <li><router-link to="/signUp">Sign Up</router-link></li>
+        <li><router-link to="/login">로그인</router-link></li>
+        <li><router-link to="/signUp">회원가입</router-link></li>
       </div>
     </ul>
   </div>
@@ -41,7 +41,8 @@ export default {
   text-decoration: none;
 }
 .navs a {
-  color: #345f53;
+  color: black;
   text-decoration: none;
+  font-size: small;
 }
 </style>

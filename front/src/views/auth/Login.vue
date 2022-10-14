@@ -87,8 +87,4 @@ export default {
   },
 };
 </script>
-<style>
-.container {
-  margin: 10% 30% 10% 30%;
-}
-</style>
+<style></style>

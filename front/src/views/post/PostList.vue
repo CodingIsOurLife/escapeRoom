@@ -1,15 +1,25 @@
 <template>
   <div class="outer">
     <div class="inner">
-      <v-card class="mx-auto" width="100%" outlined>
+      <h1>게시글</h1>
+      <br />
+      <button>게시글 작성</button>
+      <br />
+      <v-card
+        class="mx-auto"
+        width="100%"
+        outlined
+        v-for="(row, idx) in post"
+        :key="idx"
+      >
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title class="font1">
-              인생은 참 ....
+              {{ row.title }}
             </v-list-item-title>
-            <v-list-item-subtitle class="font2"
-              >정말 힘이 듭니다....</v-list-item-subtitle
-            >
+            <v-list-item-subtitle class="font2">{{
+              row.body
+            }}</v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-avatar tile size="80" color="black"></v-list-item-avatar>
@@ -18,6 +28,20 @@
     </div>
   </div>
 </template>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return { post: [] };
+  },
+  created() {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+      console.log(res);
+      this.post = res.data;
+    });
+  },
+};
+</script>
 <style>
 .outer {
   display: flex;

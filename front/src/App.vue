@@ -1,30 +1,22 @@
 <template>
-  <div class="app">
-    <Mynav></Mynav>
-    <LoginNav></LoginNav>
+  <div class="outer">
+    <div class="inner">
+      <LoginNav />
 
-    <Myheader></Myheader>
-    <p class="design"><br />Escape</p>
-    <router-view />
-    <Myfooter></Myfooter>
+      <Mynav></Mynav>
+
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import Myheader from "./components/Myheader.vue";
-import Myfooter from "./components/Myfooter.vue";
 import Mynav from "./components/Mynav.vue";
-
 import LoginNav from "./components/LoginNav.vue";
-//import HomeView from "./views/HomeView.vue";
 
 export default {
   components: {
-    Myheader,
-    Myfooter,
-    //HomeView,
     Mynav,
-
     LoginNav,
   },
 };
@@ -32,19 +24,15 @@ export default {
 
 <style>
 @font-face {
-  font-family: "Rajdhani", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+  font-family: "Nanum Gothic", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 }
-.app {
-  font-family: "Rajdhani", sans-serif;
-  color: black;
+.outer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-.design {
-  height: 100px;
-  background-color: #345f53;
-  color: white;
-  font-size: x-large;
-  text-align: center;
-  /* font-family: "Rajdhani", sans-serif; */
+.inner {
+  width: 1080px;
 }
 </style>

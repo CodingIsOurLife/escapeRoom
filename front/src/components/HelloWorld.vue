@@ -1,16 +1,25 @@
 <template>
-  <div class="main">
-    <ul>
-      <li>
-        <router-link to="/about">임시메인페이지</router-link>
-      </li>
-    </ul>
-  </div>
+  <v-carousel :show-arrows="false" height="600">
+    <v-carousel-item
+      v-for="(item, i) in items"
+      :key="i"
+      :src="item.src"
+    ></v-carousel-item>
+  </v-carousel>
 </template>
-<style>
-.main {
-  padding: 50%;
-  margin: auto;
-  background-color: gray;
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          src: "./방탈출.jpg",
+        },
+        {
+          src: "./방탈출2.jpg",
+        },
+      ],
+    };
+  },
+};
+</script>
